@@ -1,0 +1,22 @@
+<div class="container mt-4 ml-4">
+    <div class="grid">
+        <div class="col-3">
+            <p-inputGroup>
+                <input pInputText type="text" class="w-full" placeholder="Usuario" [(ngModel)]="loginData.usuario"/>
+                <p-inputGroupAddon><i class="pi pi-user"></i></p-inputGroupAddon>
+            </p-inputGroup>
+        </div><div class="col-8"></div>
+        <div class="col-3">
+            <p-inputGroup>
+                <input pInputText type="password" class="w-full" placeholder="Contraseña" [(ngModel)]="loginData.clave" *ngIf="!showPass"/>
+                <input pInputText type="text" class="w-full" placeholder="Contraseña" [(ngModel)]="loginData.clave" *ngIf="showPass"/>
+                <p-inputGroupAddon class="cursor-pointer" (click)="showPass=true" *ngIf="!showPass"><i class="pi pi-lock"></i></p-inputGroupAddon>
+                <p-inputGroupAddon class="cursor-pointer" (click)="showPass=false" *ngIf="showPass"><i class="pi pi-lock-open"></i></p-inputGroupAddon>
+            </p-inputGroup>
+        </div><div class="col-8"></div>
+        <div class="col-3">
+            <button pButton label="Ingresar" severity="primary" class="w-full" (click)="iniciarSesion()"></button>
+        </div>
+    </div>
+    <h3>{{mensaje}}</h3>
+</div>
